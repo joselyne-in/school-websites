@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIRA Clinic - Healthcare Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body { background-color: wheat; color: gray; line-height: 1.6; }
+        header {            
+            background-color: green;            
+            padding: 15px 10%;            
+            display: flex;            
+            justify-content: space-between;            
+            align-items: center;            
+            position: fixed;            
+            width: 100%;            
+            top: 0;            
+            z-index: 1000;            
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);        
+        }
+        .brand { display: flex; align-items: center; text-decoration: none; color: white; gap: 10px; }        
+        .brand-name { font-size: 24px; font-weight: bold; }
+        nav ul { display: flex; list-style: none; }        
+        nav ul li { margin-left: 20px; }        
+        nav ul li a {             
+            color: white;             
+            text-decoration: none;             
+            font-size: 15px;             
+            font-weight: 500;             
+            padding: 8px 12px;             
+            transition: 0.3s;         
+        }        
+        nav ul li a:hover { background: rgba(255,255,255,0.2); border-radius: 4px; }
+        section { padding: 120px 10% 80px; }        
+        h2 { text-align: center; margin-bottom: 40px; font-size: 32px; }        
+        h2 span { color: #89b31d; }
+        .hero {            
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('il.jpg');            
+            background-size: cover;            
+            background-position: center;            
+            height: 60vh;            
+            display: flex;            
+            flex-direction: column;            
+            justify-content: center;            
+            align-items: center;            
+            color: white;            
+            text-align: center;            
+            margin-top: 50px;        
+        }
+        .about-text { max-width: 800px; margin: 0 auto; text-align: center; font-size: 18px; color: gray; }
+        .reg-card {            
+            max-width: 750px;            
+            margin: 0 auto;            
+            background: white;            
+            padding: 40px;            
+            border-radius: 12px;            
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);            
+            border-top: 5px solid lightgreen;        
+        }        
+        .form-row { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }        
+        .form-group { flex: 1; min-width: 250px; }        
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #444; }        
+        .form-group input, .form-group select, .form-group textarea {            
+            width: 100%;            
+            padding: 12px;            
+            border: 1px solid white;            
+            border-radius: 6px;            
+            font-size: 16px;            
+            outline-color: LIGHTGREEN;        
+        }        
+        .btn-submit {            
+            background: LIGHTGREEN;            
+            color: white;            
+            border: none;            
+            padding: 16px;            
+            width: 100%;            
+            border-radius: 6px;            
+            font-weight: bold;            
+            font-size: 18px;            
+            cursor: pointer;            
+            transition: 0.3s;        
+        }        
+        .btn-submit:hover { background: #6d8f16; }
+        .partners-flex { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }        
+        .partner-tag { background: white; padding: 12px 25px; border-radius: 6px; color: lightgreen; font-weight: bold; }
+        .doctors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }        
+        .doctor-card { text-align: center; padding: 25px; border: 1px solid white; border-radius: 12px; transition: 0.3s; }        
+        .doctor-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }        
+        .doctor-card img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #89b31d; }
+        
+        
+        footer { 
+            background: black; 
+            color: white; 
+            padding: 40px 10%; 
+            text-align: center; 
+        }
+        .social-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-icon {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            width: 45px;
+            height: 45px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        /* Guhindura amabara ya buri rbuga iyo ukanzeho (Hover) */
+        .social-icon.facebook:hover { background-color: #1877f2; transform: translateY(-3px); }
+        .social-icon.twitter:hover { background-color: #1da1f2; transform: translateY(-3px); }
+        .social-icon.instagram:hover { background-color: #e1306c; transform: translateY(-3px); }
+        .social-icon.whatsapp:hover { background-color: #25d366; transform: translateY(-3px); }
+        
+        .copyright-text {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {            
+            header { flex-direction: column; }            
+            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }            
+            nav ul li { margin: 5px; }        
+        }    
+    </style>
+</head>
+<body>
+
+    <h1>My Photo</h1>
+<img src="images/clinic.jpg" alt="Kira Clinic">
+    <header>        
+        <a href="#home" class="brand">            
+                        
+            <span class="brand-name">KIRA Clinic</span>        
+        </a>        
+        <nav>            
+            <ul>                
+                <li><a href="#home">Home</a></li>                
+                <li><a href="#about">About</a></li>                
+                <li><a href="#doctors">Doctors</a></li>                
+                <li><a href="#partnership">Partners</a></li>                
+                <li><a href="#register">Register</a></li>                
+                <li><a href="#contact">Contact</a></li>            
+            </ul>        
+        </nav>    
+    </header>
+    
+    <section id="home" class="hero">        
+        <h1>Welcome to Kira Clinic</h1>        
+        <p>Expert Medical Care for You and Your Family.</p>    
+    </section>
+    
+    <section id="about">        
+        <h2>About <span>Us</span></h2>        
+        <div class="about-text">            
+            <p>KIRA Clinic is a premier healthcare center located in Nyagatare. We provide professional medical services including general consultation, pediatrics, and emergency care using modern technology.</p>        
+        </div>    
+    </section>
+    
+    <section id="doctors" style="background: white;">        
+        <h2>Meet Our <span>Doctors</span></h2>        
+        <div class="doctors-grid">            
+            <div class="doctor-card">                
+                <img src="img/images.PNG" alt="Dr. Bosco">                
+                <h4>Dr. Jean Bosco</h4>                
+                <p style="color: lightgreen; font-weight: bold;">General Practitioner</p>                
+                <p style="font-size: 14px; color: #777;">Over 12 years of experience in internal medicine.</p>            
+            </div>            
+            <div class="doctor-card">                
+                <img src="alc.jpg" alt="Dr. Alice">                
+                <h4>Dr. Alice Uwase</h4>                
+                <p style="color: lightgreen; font-weight: bold;">Pediatric Specialist</p>                
+                <p style="font-size: 14px; color: gray;">Expert in child healthcare and nutrition.</p>            
+            </div>        
+        </div>    
+    </section>
+    
+    <section id="partnership">        
+        <h2>Insurance <span>Partners</span></h2>        
+        <div class="partners-flex">            
+            <div class="partner-tag">RSSB (RAMA)</div>            
+            <div class="partner-tag">MMI</div>            
+            <div class="partner-tag">BRITAM</div>            
+            <div class="partner-tag">RADIANT</div>            
+            <div class="partner-tag">UAP</div>            
+            <div class="partner-tag">EDEN CARE</div>        </div>    
+    </section>
+        
+    <section id="register" style="background: lightblue;">        
+        <h2>Patient <span>Registration</span></h2>        
+        <div class="reg-card">            
+            <form action="#">
+                <section id="register" style="background: lightgreen; padding: 50px 0; font-family: sans-serif;">    
+                    <div class="reg-card" style="max-width: 600px; margin: auto; background:BLUE; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">                
+                        <h2 style="text-align: center; color: #1f2937; margin-bottom: 25px;">Patient <span style="color: #2563eb;">Registration</span></h2>        
+                        <form action="#">            
+                            <div class="form-group" style="margin-bottom: 15px;">                
+                                <label style="display: block; font-weight: 600; margin-bottom: 5px; color:grey;">Full Name</label>                
+                                <input type="text" placeholder="Enter your name" required style="width: 100%; padding: 12px; border: 1px solid white; border-radius: 8px; box-sizing: border-box;">            
+                            </div>
+                            <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">                
+                                <div class="form-group" style="flex: 1;">                    
+                                    <label style="display: block; font-weight: 600; margin-bottom: 5px; color: gray;">Date of Birth</label>                    
+                                    <input type="date" placeholder="DD/MM/YYYY" required style="width: 100%; padding: 12px; border: 1px solid white; border-radius: 8px; box-sizing: border-box;">                
+                                </div>                
+                                <div class="form-group" style="flex: 1;">                    
+                                    <label style="display: block; font-weight: 600; margin-bottom: 5px; color: gray;">Place of Issue</label>                    
+                                    <input type="text" placeholder="District or City" required style="width: 100%; padding: 12px; border: 1px solid white; border-radius: 8px; box-sizing: border-box;">                
+                                </div>            
+                            </div>
+                            <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">                
+                                <div class="form-group" style="flex: 1;">                    
+                                    <label style="display: block; font-weight: 600; margin-bottom: 5px; color: gray;">Email Address</label>                    
+                                    <input type="email" placeholder="name@email.com" required style="width: 100%; padding: 12px; border: 1px solid grey; border-radius: 8px; box-sizing: border-box;">                
+                                </div>                
+                                <div class="form-group" style="flex: 1;">                    
+                                    <label style="display: block; font-weight: 600; margin-bottom: 5px; color: gray;">Gender</label>                    
+                                    <select required style="width: 100%; padding: 12px; border: 1px solid white; border-radius: 8px; box-sizing: border-box; background: white;">                        
+                                        <option value="" disabled selected>SELECT YOUR SEX...</option>                        
+                                        <option value="male">Male</option>                        
+                                        <option value="female">Female</option>                    
+                                    </select>                
+                                </div>            
+                            </div>
+                            <div class="form-group" style="margin-bottom: 25px;">                
+                                <label style="display: block; font-weight: 600; margin-bottom: 5px; color: black;">Reason for Visit</label>                
+                                <textarea rows="4" placeholder="Explain in few words..." required style="width: 100%; padding: 12px; border: 1px solid white; border-radius: 8px; box-sizing: border-box;"></textarea>            
+                            </div>
+                            <button type="submit" style="width: 100%; background:orange; color: BLUE; padding: 15px; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s;">Submit Registration</button>        
+                        </form>    
+                    </div>
+                </section>        
+            </form>
+        </div>    
+    </section>
+    
+    <section id="contact">        
+        <h2>Contact <span>Us</span></h2>        
+        <div style="text-align: center;">            
+            <p>📍 Location: Nyagatare, Rwanda</p>            
+            <p>📞 Phone: +250 788 000 000</p>            
+            <p>📧 Email: info@kiraclinic.rw</p>        
+        </div>    
+    </section>
+    
+    <footer>        
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="social-icon facebook" title="Follow on Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://x.com" target="_blank" class="social-icon twitter" title="Follow on X (Twitter)">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-icon instagram" title="Follow on Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/250788000000" target="_blank" class="social-icon whatsapp" title="Chat on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <p class="copyright-text">© 2026 Copyright Kira Clinic Ltd. All rights reserved.</p>    
+    </footer>
+</body>
+</html>
