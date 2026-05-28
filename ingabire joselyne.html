@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Click Game</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style> 
+body{
+    text-align: center;
+}
+#app{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <h1>Click Game</h1>
+
+  <p>Score: {{ score }}</p>
+  <p>Time: {{ time }}</p>
+
+  <div
+    @click="increaseScore"
+    :style="{
+      width: '150px',
+      height: '150px',
+      backgroundColor: 'blue',
+      margin: '20px',
+      cursor: isPlaying ? 'pointer' : 'not-allowed',
+      opacity: isPlaying ? 1 : 0.5
+    }">
+  </div>
+
+  <button @click="startGame" :disabled="isPlaying">
+    Start Game
+  </button>
+
+  <h2 v-if="gameOver">Game Over!: {{ score }}</h2>
+</div>
+
+<script>
+const { createApp } = Vue;
+
+createApp({
+  data() {
+    return {
+      score: 0,
+      time: 6,
+      isPlaying: false,
+      gameOver: false,
+      timer: 2
+    }
+  },
+  methods: {
+    startGame() {
+      this.score = 0;
+      this.time = 6;
+      this.isPlaying = true;
+      this.gameOver = false;
+
+      this.timer = setInterval(() => {
+        this.time--;
+        if (this.time <= 0) {
+          this.endGame();
+        }
+      }, 1000);
+    },
+    increaseScore() {
+      if (this.isPlaying) {
+        this.score++;
+      }
+    },
+    endGame() {
+      clearInterval(this.timer);
+      this.isPlaying = false;
+      this.gameOver = true;
+    }
+  }
+}).mount('#app');
+</script>
+
+</body>
+</html>
